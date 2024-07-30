@@ -1,5 +1,4 @@
 
-
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="{{route('movies.index')}}" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -39,7 +38,13 @@
           </div>
           <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
         </div>
-        
+        @auth
+            <div>
+                Username: {{ Auth::user()->username}}
+                <a href="{{route('logout')}}">Logout</a>
+            </div>
+        @endauth
+
       </div>
     </div>
   </nav>
